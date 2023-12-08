@@ -1,0 +1,44 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: hystrix-demo
+  main:
+    allow-bean-definition-overriding: true
+
+# 开启熔断机制，默认false
+feign:
+  hystrix:
+    enabled: true
+  circuitbreaker:
+    enabled: true
+
+# Hystrix settings
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            # 配置默认的超时时间，线程超时15秒,调用Fallback方法，默认为1000ms
+            timeoutInMilliseconds: 15000
+      metrics:
+        rollingStats:
+          timeInMilliseconds: 15000
+      circuitBreaker:
+        # 10秒内出现3个以上请求(已临近阀值),并且出错率在50%以上,开启断路器.断开服务,调用Fallback方法
+        requestVolumeThreshold: 3
+        sleepWindowInMilliseconds: 10000
+
+#eureka client
+eureka:
+  client:
+    service-url:
+      defaultZone: http://demo:Demo2023@localhost:1001/eureka/
+  instance:
+    hostname: localhost
+    prefer-ip-address: true # 是否使用 ip 地址注册
+    instance-id: ${spring.cloud.client.ip-address}:${server.port} # ip:port
+    lease-renewal-interval-in-seconds: 5 # 实例续期心跳间隔（默认30s），设置之后启动服务不需要等很久就可以访问到服务的内容
+    lease-expiration-duration-in-seconds: 15 # 实例续期持续多久后失效（默认90s）

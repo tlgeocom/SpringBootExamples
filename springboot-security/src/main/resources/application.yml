@@ -1,0 +1,20 @@
+server:
+  port: 8080
+  servlet:
+    context-path: / # 项目路径
+
+spring:
+  mvc:
+    view:
+      prefix: classpath:/templates/
+      suffix: .html
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mydb?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&rewriteBatchedStatements=true&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+
+#开启Mybatis下划线命名转驼峰命名
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true

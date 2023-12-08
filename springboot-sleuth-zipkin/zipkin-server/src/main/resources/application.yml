@@ -1,0 +1,23 @@
+server:
+  port: 9411
+
+spring:
+  application:
+    name: logback-eureka
+  main:
+    allow-bean-definition-overriding: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+  metrics:
+    web:
+      server:
+        auto-time-requests: false    #去除控制台异常
+
+

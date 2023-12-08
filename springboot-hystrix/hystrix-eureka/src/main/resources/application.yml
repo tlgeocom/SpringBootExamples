@@ -1,0 +1,26 @@
+server:
+  port: 1001
+
+spring:
+  application:
+    name: hystrix-eureka
+  security:
+    user:
+      name: demo
+      password: Demo2023
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    # eureka.client.registerWithEureka ：表示是否将自己注册到Eureka Server，默认为true。
+    # 由于当前这个应用就是Eureka Server，故而设为false
+    register-with-eureka: false
+    # eureka.client.fetchRegistry ：表示是否从Eureka Server获取注册信息，默认为true。
+    # 因为这是一个单点的Eureka Server，不需要同步其他的Eureka Server节点的数据，故而设为false。
+    fetch-registry: false
+  server:
+    # 配置属性，但由于 Eureka 自我保护模式以及心跳周期长的原因，经常会遇到 Eureka Server 不剔除已关停的节点的问题
+    enable-self-preservation: false
+    # 清理间隔（单位毫秒，默认是60*1000），开发环境设置如下可快速移除不可用的服务
+    eviction-interval-timer-in-ms: 5000

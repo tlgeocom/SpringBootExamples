@@ -1,0 +1,13 @@
+spring:
+  zipkin:
+    # zipkin-server地址
+    base-url:
+  sleuth:
+    sampler:
+      # 采样比例，0-1 之间，1 表示全部采集
+      probability: 1.0
+
+  # 用于打印更多 sleuth 日志
+  #logging:
+  #  level:
+  #    org.springframework.cloud.sleuth: DEBUG
