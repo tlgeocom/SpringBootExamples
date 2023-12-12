@@ -1,3 +1,4 @@
+/*
 package com.demo.config;
 
 
@@ -33,3 +34,4 @@ public class AuthorizeFilter implements GlobalFilter {
 
     }
 }
+*/

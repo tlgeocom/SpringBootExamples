@@ -16,7 +16,12 @@ spring:
           uri: http://localhost:8081
           predicates:
             Path=/demo/test/** #断言,路径相匹配的进行路由
-
+        - id: layer_1
+          predicates:
+            - Path=/layer/**
+          uri: no://op
+          filters:
+            - UriHostPlaceholderFilter=10001
 eureka:
   instance:
     hostname: localhost
