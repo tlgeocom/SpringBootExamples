@@ -15,6 +15,7 @@
         <module>demo-eureka</module>
         <module>demo-feign-a</module>
         <module>demo-feign-b</module>
+        <module>demo-gateway</module>
     </modules>
 
     <properties>
