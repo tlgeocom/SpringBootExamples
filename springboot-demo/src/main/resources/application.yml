@@ -1,1 +1,6 @@
-
+item:
+  maps:
+    12902:
+      cn: "id,code,create_time,update_time"
+      te: "task_group"
+      we: " 1=1 "

@@ -40,7 +40,7 @@ public class UriHostPlaceholderFilter extends AbstractGatewayFilterFactory<UriHo
 
             String type = queryParams.getFirst("type");
             if(!type.equals("")){
-                newurl = "http://127.0.0.1:8080/geoserver/gwc/service/wmts?layer=ellip%3Aimg_c_1_16_big&style=&tilematrixset=EPSG%3A4326&Service=WMTS&Request=GetTile&Version=1.0.0&Format=image%2Fpng&TileMatrix=EPSG%3A4326%3A8&TileCol=420&TileRow=71";
+                newurl = "http://127.0.0.1:8080/geoserver/gwc/service/wmts?layer=ellip%3Aimg_c&style=&tilematrixset=EPSG%3A4326&Service=WMTS&Request=GetTile&Version=1.0.0&Format=image%2Fpng&TileMatrix=EPSG%3A4326%3A8&TileCol=420&TileRow=71";
             }
             if (!newurl.equals("")) {
 
