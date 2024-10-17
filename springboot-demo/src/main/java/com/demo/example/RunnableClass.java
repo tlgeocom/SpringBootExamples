@@ -2,7 +2,8 @@ package com.demo.example;
 
 import java.util.concurrent.Callable;
 
-public class Test implements Runnable {
+public class RunnableClass implements Runnable {
+    @Override
     public void run(){
         int i = 0;
         while(true){
